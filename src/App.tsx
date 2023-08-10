@@ -3,12 +3,26 @@ import { FaHome } from "react-icons/fa";
 import { SiAboutdotme } from "react-icons/si";
 import { AiTwotoneExperiment, AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { IoLanguageSharp } from "react-icons/io5";
+import { useTranslation } from 'react-i18next';
+
+import myImage from './assets/eu.jpg';
+import br from './assets/flags/br.svg';
+import us from './assets/flags/us.svg';
+import es from './assets/flags/es.svg';
+
 
 function App() {
+  const { t, i18n } = useTranslation();
+
   const [category, setCategory] = useState<string>('hello');
+  const [isOpen, setIsOpen] = useState(false)
 
   function selectCategory(idReference:string){
     setCategory(idReference);
+  }
+
+  function selectLanguage(language:string){
+    i18n.changeLanguage(language);
   }
   
   return (
@@ -41,9 +55,31 @@ function App() {
           </nav>
 
           <span className='absolute right-[86px] text-[29px]'>
-            <button id='dropdownDefaultButton' data-dropdown-toggle="dropdown">
+            <button onClick={() => setIsOpen(!isOpen)}>
               <IoLanguageSharp className="fill-[#CA3E47]"></IoLanguageSharp>
             </button>
+
+            {isOpen && (
+              <div className="absolute z-10 mt-1 w-[140px] left-[-110px] rounded-md shadow-lg bg-white ">
+                <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                  <button onClick={() => selectLanguage("pt")} className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex w-full justify-between" role="menuitem">
+                    Português
+                    <img src={br} className='w-[30px]' />
+                  </button>
+                  <button onClick={() => selectLanguage("en")} className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex w-full justify-between" role="menuitem">
+                    English
+                    <img src={us} className='w-[30px]' />
+                  </button>
+                  <button onClick={() => selectLanguage("es")} className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex w-full justify-between" role="menuitem">
+                    Español
+                    <img src={es} className='w-[30px]' />
+                  </button>
+                </div>
+              </div>
+            )}
+            
+            
+
           </span>
         </header>
 
@@ -53,7 +89,7 @@ function App() {
 
             <div className='w-[787px]'>
               <div>
-                <h4 className='text-[36px] text-[#979797]'>Olá,</h4>
+                <h4 className='text-[36px] text-[#979797]'>{ t('hello') },</h4>
                 <h2 className='text-[48px] text-white'>Eu sou</h2>
                 <h2 className='text-[48px] text-[#CA3E47]'>Douglas Teixeira</h2>
               </div>
@@ -80,22 +116,37 @@ function App() {
                 <p>Além de estar muito determinado para meu crescimento pessoal de conhecimento na área da tecnologia, criando projetos sempre inovadores para mim com muito amor e dedicação.</p>
                 <p>Algumas tecnologias que tenho trabalhado recentemente:</p>
 
-                <ul>
-                  <li>Javascript (ES6++)</li>
-                  <li>Typescript</li>
-                  <li>Node.js</li>
-                </ul>
+                <div className='flex mt-[15px] justify-around'>
+                  <ul className='w-full mr-[5px]'>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      Javascript (ES6++)
 
-                <ul>
-                  <li>React</li>
-                  <li>Vue</li>
-                  <li>Asp.net</li>
-                </ul>
+                    </li>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      Typescript
+                    </li>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      Node.js
+                    </li>
+                  </ul>
+
+                  <ul className='w-full'>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      React
+                    </li>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      Vue
+                    </li>
+                    <li className='mb-[5px] border-[1px] border-red-600'>
+                      Asp.net
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className='h-[400px] w-[400px] rounded-full bg-[#CA3E47]'>
-              <img />
+            <div className='h-[400px] w-[400px] rounded-full bg-[#CA3E47] flex justify-center items-center'>
+              <img src={myImage} className='h-[95%] rounded-full' />
             </div>
           </div>
 
