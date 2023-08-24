@@ -1,6 +1,59 @@
 import { useTranslation } from 'react-i18next';
+import { Radar } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend
+} from 'chart.js';
 
 import myImage from '../assets/eu.jpg';
+
+ChartJS.register(
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend
+);
+
+export const data = {
+    labels: ['Laravel', 'Angular', 'Ionic', 'React', 'Thing 5', 'Thing 6'],
+    datasets: [
+        {
+            label: '# of Votes',
+            data: [2, 9, 3, 5, 2, 3],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+        },
+    ]
+};
+
+export const options = {
+    scales: {
+        r: {
+            color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo'],
+            grid: {
+                color: ['white', 'red', 'grey']
+            },
+            angleLines: {
+                color: 'white'
+            },
+            pointLabels: {
+                color: 'white'
+            },
+            ticks: {
+                color: 'red',
+
+            }
+        }
+    },
+};
 
 function About() {
     const { t, i18n } = useTranslation();
@@ -18,30 +71,11 @@ function About() {
                     <p>Algumas tecnologias que tenho trabalhado recentemente:</p>
 
                     <div className='flex mt-[15px] justify-around'>
-                    <ul className='w-full mr-[5px]'>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        Javascript (ES6++)
 
-                        </li>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        Typescript
-                        </li>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        Node.js
-                        </li>
-                    </ul>
-
-                    <ul className='w-full'>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        React
-                        </li>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        Vue
-                        </li>
-                        <li className='mb-[5px] border-[1px] border-red-500'>
-                        Asp.net
-                        </li>
-                    </ul>
+                    <Radar
+                        data={data}
+                        options={options}
+                        />
                     </div>
                 </div>
                 </div>
