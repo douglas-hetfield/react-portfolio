@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
+
 import Hello from './pages/Hello';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
-import Footer from './components/Footer';
+import Contact from './pages/Contact';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -23,6 +25,7 @@ function App() {
           <About />
           <Experience />
           <Projects />
+          <Contact />
         </div>
 
         <Footer />

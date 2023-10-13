@@ -10,16 +10,16 @@ function Hello() {
     
             <div className='w-[787px]'>
                 <div>
-                <h4 className='text-[36px] text-[#979797]'>{ t('hello') },</h4>
-                <h2 className='text-[48px] text-white'>Eu sou</h2>
+                <h4 className='text-[36px] text-[#979797]'>{ t('helloPage.hello') },</h4>
+                <h2 className='text-[48px] text-white'>{ t('helloPage.iAm') }</h2>
                 <h2 className='text-[48px] text-[#CA3E47]'>Douglas Teixeira</h2>
                 </div>
     
                 <div id='resume' className='mb-[100px]'>
-                    <p className='text-white'>Atualmente desenvolvedor Full-stack júnior na empresa Linha Direta,
-                        atuando diretamente na manutenção e desenvolvimento de novas funcionalidades em todo ecossistema do Linha Direta.</p>
+                    <p className='text-white'>{ t('helloPage.msg1') }</p>
+                    <p className='text-white'>{ t('helloPage.msg2') }</p>
                 </div>
-                <a href='#footer' className='border-[#CA3E47] border-[1px] text-white max-w-[344px] w-full h-[69px] rounded-[15px]'>Contactar agora</a>
+                <a href='#footer' className='border-[#CA3E47] border-[1px] text-white max-w-[344px] w-full h-[69px] rounded-[15px]'>{ t('helloPage.contactNow') }</a>
             </div>
     
                 {/* <div id='radius-line-red' className='rounded-full border-[18px] border-[#CA3E47] h-[560px] w-[560px] absolute right-[-320px] flex justify-center items-center'>

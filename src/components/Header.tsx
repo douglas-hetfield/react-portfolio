@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { SiAboutdotme } from "react-icons/si";
 import { AiTwotoneExperiment, AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { IoLanguageSharp } from "react-icons/io5";
+import { BiSolidContact } from "react-icons/bi";
 import { useState } from 'react'
 
 import br from '../assets/flags/br.svg';
@@ -25,27 +26,32 @@ function Header(){
 
     return (
         <>
-            <header className='bg-[#393939] h-[100px] flex row justify-center items-center fixed w-full z-[1]'>
+            <header className='bg-[#393939] h-[60px] flex row justify-center items-center fixed w-full z-[1]'>
                 <nav className='flex gap-[50px]'>
                     <span className='text-[29px]'>
-                    <a href='#hello' onClick={() => selectCategory("hello")}>
-                        <FaHome className={`${category == 'hello' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></FaHome>
-                    </a>
+                        <a href='#hello' onClick={() => selectCategory("hello")}>
+                            <FaHome className={`${category == 'hello' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></FaHome>
+                        </a>
                     </span>
                     <span className='text-[29px]'>
-                    <a href='#about' onClick={() => selectCategory("about")}>
-                        <SiAboutdotme className={`${category == 'about' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></SiAboutdotme>
-                    </a>
+                        <a href='#about' onClick={() => selectCategory("about")}>
+                            <SiAboutdotme className={`${category == 'about' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></SiAboutdotme>
+                        </a>
                     </span>
                     <span className='text-[29px]'>
-                    <a href='#experience' onClick={() => selectCategory("experience")}>
-                        <AiTwotoneExperiment className={`${category == 'experience' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></AiTwotoneExperiment>
-                    </a>
+                        <a href='#experience' onClick={() => selectCategory("experience")}>
+                            <AiTwotoneExperiment className={`${category == 'experience' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></AiTwotoneExperiment>
+                        </a>
                     </span>
                     <span className='text-[29px]'>
-                    <a href='#projects' onClick={() => selectCategory("projects")}>
-                        <AiOutlineFundProjectionScreen className={`${category == 'projects' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></AiOutlineFundProjectionScreen>
-                    </a>
+                        <a href='#projects' onClick={() => selectCategory("projects")}>
+                            <AiOutlineFundProjectionScreen className={`${category == 'projects' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></AiOutlineFundProjectionScreen>
+                        </a>
+                    </span>
+                    <span className='text-[29px]'>
+                        <a href='#contact' onClick={() => selectCategory("contact")}>
+                            <BiSolidContact className={`${category == 'contact' ? 'fill-[#CA3E47]' : 'fill-[#666666]'}`}></BiSolidContact>
+                        </a>
                     </span>
                 </nav>
 

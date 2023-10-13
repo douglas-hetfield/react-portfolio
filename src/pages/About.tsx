@@ -22,11 +22,11 @@ ChartJS.register(
 );
 
 export const data = {
-    labels: ['Laravel', 'Angular', 'Ionic', 'React', 'Thing 5', 'Thing 6'],
+    labels: ['Laravel', 'Angular', 'Ionic', 'React', 'MySQL'],
     datasets: [
         {
-            label: '# of Votes',
-            data: [2, 9, 3, 5, 2, 3],
+            label: '# de Conhecimento',
+            data: [9, 10, 10, 7, 6],
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1,
@@ -60,24 +60,22 @@ function About() {
 
     return (
         <>
-            <div id='about' className='h-[100vh] ml-[72px] flex justify-center items-center'>
+            <div id='about' className='h-[100vh] flex justify-center items-center'>
                 <div className='mr-[72px]'>
-                <h3>Sobre Mim</h3>
-                <div id='line-red-img' className=''></div>
+                    <h3>Sobre Mim</h3>
+                    <div id='line-red-img' className=''></div>
 
-                <div className='w-[576px]'>
-                    <p>Atualmente fazendo estágio na área de desenvolvimento na Serget Mobilidade Viária, atuando principalmente na manutenção e desenvolvimento de novas ferramentas, e funcionalidades para usuários dos sistemas públicos e privados da empresa.</p>
-                    <p>Além de estar muito determinado para meu crescimento pessoal de conhecimento na área da tecnologia, criando projetos sempre inovadores para mim com muito amor e dedicação.</p>
-                    <p>Algumas tecnologias que tenho trabalhado recentemente:</p>
+                    <div className='w-[576px]'>
+                        <p>Atualmente fazendo estágio na área de desenvolvimento na Serget Mobilidade Viária, atuando principalmente na manutenção e desenvolvimento de novas ferramentas, e funcionalidades para usuários dos sistemas públicos e privados da empresa.</p>
 
-                    <div className='flex mt-[15px] justify-around'>
+                        <div className='flex mt-[15px] justify-around w-full px-[40px]'>
 
-                    <Radar
-                        data={data}
-                        options={options}
-                        />
+                        <Radar
+                            data={data}
+                            options={options}
+                            />
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div className='h-[400px] w-[400px] rounded-full bg-[#CA3E47] flex justify-center items-center shadow-[0px_0px_40px_25px_rgba(202,62,71,0.5)]'>
